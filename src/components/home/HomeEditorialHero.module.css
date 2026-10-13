@@ -1,0 +1,207 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: max(48rem, calc(100svh - 5rem));
+  background: #eeefea;
+  color: #111827;
+}
+
+.inner {
+  position: relative;
+  width: min(100%, 90rem);
+  min-height: inherit;
+  margin-inline: auto;
+}
+
+.eyebrow,
+.greeting,
+.introduction,
+.identity,
+.role {
+  position: absolute;
+  z-index: 3;
+  margin: 0;
+}
+
+.eyebrow {
+  top: 12%;
+  left: 7%;
+  color: #5149a9;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+}
+
+.greeting {
+  top: 21%;
+  left: 6%;
+  z-index: 3;
+  color: #202127;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(5.5rem, 10.4vw, 9.5rem);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.09em;
+  line-height: 0.92;
+  white-space: nowrap;
+}
+
+.greetingBlack,
+.greetingHighlight,
+.identitySurname {
+  color: #fff8ed;
+}
+
+.greetingBlack,
+.greetingHighlight,
+.identitySurname {
+  -webkit-text-stroke: 1px #111827;
+  paint-order: stroke fill;
+}
+
+.introduction {
+  top: 34%;
+  right: 7%;
+  max-width: 15rem;
+  color: #40434a;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.identity {
+  bottom: 8%;
+  left: 7%;
+  display: flex;
+  flex-direction: column;
+  color: #111318;
+  font-family: 'Arial Narrow', 'Roboto Condensed', Impact, sans-serif;
+  font-stretch: condensed;
+  font-weight: 900;
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+
+.identityPrefix {
+  font-size: clamp(2.5rem, 4.4vw, 4.5rem);
+  letter-spacing: -0.045em;
+}
+
+.identityName {
+  margin-top: 0.08em;
+  font-size: clamp(3.25rem, 7vw, 7rem);
+  letter-spacing: -0.075em;
+  white-space: nowrap;
+}
+
+.role {
+  right: 7%;
+  bottom: 13%;
+  color: #17191e;
+  font-family: 'Arial Narrow', 'Roboto Condensed', Impact, sans-serif;
+  font-size: clamp(1.75rem, 3vw, 3rem);
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 0.88;
+}
+
+@media (max-width: 1023px) and (min-width: 701px) {
+  .hero {
+    min-height: max(44rem, calc(100svh - 5rem));
+  }
+
+  .greeting {
+    top: 9%;
+    left: 50%;
+    font-size: clamp(4rem, 8vw, 5rem);
+    text-align: center;
+    transform: translateX(-50%);
+  }
+
+  .introduction {
+    top: 28%;
+    right: 5%;
+    max-width: 13rem;
+    font-size: 0.82rem;
+  }
+
+  .identity {
+    bottom: 8%;
+    left: 5%;
+  }
+
+  .identityName {
+    font-size: clamp(3.15rem, 7.5vw, 5.2rem);
+  }
+
+  .role {
+    right: 5%;
+    bottom: 13%;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: 0;
+    background: #eeefea;
+  }
+
+  .inner {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5.5rem 1.25rem 2.5rem;
+  }
+
+  .eyebrow,
+  .greeting,
+  .introduction,
+  .identity,
+  .role {
+    position: relative;
+    inset: auto;
+    z-index: auto;
+  }
+
+  .eyebrow {
+    font-size: 0.66rem;
+  }
+
+  .greeting {
+    margin-top: 0.55rem;
+    z-index: 3;
+    font-size: clamp(4.4rem, 17vw, 6rem);
+    line-height: 0.95;
+    white-space: normal;
+  }
+
+  .introduction {
+    max-width: 26rem;
+    margin-top: 0.8rem;
+    font-size: 0.87rem;
+    line-height: 1.6;
+  }
+
+  .identity {
+    align-self: flex-start;
+    margin-top: -1.2rem;
+    line-height: 0.83;
+  }
+
+  .identityPrefix {
+    font-size: clamp(2.4rem, 10vw, 3.4rem);
+  }
+
+  .identityName {
+    font-size: clamp(3rem, 12vw, 4.5rem);
+    white-space: normal;
+  }
+
+  .role {
+    align-self: flex-end;
+    margin-top: 0.85rem;
+    font-size: clamp(1.35rem, 6vw, 1.8rem);
+    text-align: right;
+  }
+}

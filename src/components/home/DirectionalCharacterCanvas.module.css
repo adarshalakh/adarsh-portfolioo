@@ -1,0 +1,47 @@
+.character {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+
+.canvas {
+  display: block;
+  width: auto;
+  height: min(91%, 54rem);
+  max-width: 68%;
+  aspect-ratio: 9 / 16;
+  background: #eeefea;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 80%, transparent 100%);
+}
+
+@media (max-width: 1023px) and (min-width: 701px) {
+  .canvas {
+    height: 76%;
+    max-width: 72%;
+  }
+}
+
+@media (max-width: 700px) {
+  .character {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    margin-top: -0.2rem;
+  }
+
+  .canvas {
+    width: min(88%, 22rem);
+    height: auto;
+    max-width: none;
+    align-self: center;
+    margin-inline: auto;
+  }
+}
